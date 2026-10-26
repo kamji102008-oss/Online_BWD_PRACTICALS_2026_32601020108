@@ -1,7 +1,4 @@
-.
-.
-.
-.<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -12,7 +9,7 @@
 
     <h1>College Technical Event 2026</h1>
 
-    <p>Welcome to our exciting technical event!</p>
+    <p>Welcome to our College Technical Event!</p>
 
     <h2>Event Details</h2>
 
@@ -22,13 +19,32 @@
 
     <h2>Event Image</h2>
 
-    <a href="programe.html">
-        <img src="event.jpg/event.jpg" alt="Technical Event" width="300">
+    <a href="#registration">
+        <img
+            src="event.jpg/event.jpg"
+            alt="Technical Event Image"
+            width="300">
     </a>
 
-    <p>Click the image to open the registration page.</p>
+    <p>Click the image to go to the registration section.</p>
 
-    <a href="programe.html">Register Now</a>
+    <h2 id="registration">Event Registration</h2>
+
+    <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required>
+        <br><br>
+
+        <input type="submit" value="Register">
+    </form>
 
 </body>
 </html>
