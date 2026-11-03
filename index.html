@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML5 Canvas and SVG</title>
+</head>
+<body>
+
+    <h1>HTML5 Canvas Shapes</h1>
+
+    <canvas id="myCanvas" width="500" height="300"
+        style="border:2px solid black;">
+    </canvas>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+
+        // Rectangle
+        ctx.fillStyle = "blue";
+        ctx.fillRect(30, 30, 120, 70);
+
+        // Circle
+        ctx.beginPath();
+        ctx.arc(230, 65, 40, 0, 2 * Math.PI);
+        ctx.fillStyle = "red";
+        ctx.fill();
+
+        // Line
+        ctx.beginPath();
+        ctx.moveTo(30, 150);
+        ctx.lineTo(200, 150);
+        ctx.strokeStyle = "green";
+        ctx.lineWidth = 4;
+        ctx.stroke();
+
+        // Text
+        ctx.font = "25px Arial";
+        ctx.fillStyle = "black";
+        ctx.fillText("Welcome to College", 30, 220);
+    </script>
+
+    <h2>SVG College Logo</h2>
+
+    <svg width="200" height="150">
+        <circle cx="100" cy="70" r="50"
+            fill="lightblue" stroke="blue" stroke-width="4"/>
+
+        <text x="100" y="80"
+            font-size="25"
+            text-anchor="middle"
+            fill="black">M</text>
+    </svg>
+
+</body>
+</html>
