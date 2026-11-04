@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Information</title>
+</head>
+<body>
+
+    <h1>Marwadi University</h1>
+
+    <h2>College Information</h2>
+
+    <p>
+        Marwadi University is a well-known
+        university located in Rajkot, Gujarat.
+    </p>
+
+    <h2>College Location</h2>
+
+    <button onclick="getLocation()">
+        Get My Location
+    </button>
+
+    <p id="demo">Your location will appear here.</p>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(
+                    function(position) {
+                        document.getElementById("demo").innerHTML =
+                        "Latitude: " + position.coords.latitude +
+                        "<br>Longitude: " + position.coords.longitude;
+                    },
+                    function() {
+                        document.getElementById("demo").innerHTML =
+                        "Unable to get location. Please allow permission.";
+                    }
+                );
+            } else {
+                document.getElementById("demo").innerHTML =
+                "Geolocation is not supported.";
+            }
+        }
+    </script>
+
+    <h2>College Map</h2>
+
+    <iframe
+        src="https://maps.google.com/maps?q=Marwadi%20University%20Rajkot&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        width="500"
+        height="350"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy">
+    </iframe>
+
+    <h3>Purpose of Iframe</h3>
+
+    <p>
+        Iframe is used to display another webpage
+        or Google Map inside the current webpage.
+    </p>
+
+</body>
+</html>
