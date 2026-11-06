@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>College Admission Form</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(120deg, #89f7fe, #66a6ff);
+            margin: 0;
+            padding: 30px;
+        }
+
+        .container {
+            width: 500px;
+            max-width: 100%;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border: 2px solid #3498db;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px gray;
+        }
+
+        h2 {
+            text-align: center;
+            color: #1565c0;
+            text-shadow: 1px 1px 2px lightgray;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 6px;
+            border: 1px solid #aaa;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border: 2px solid #3498db;
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background: #1565c0;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #003c8f;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>College Admission Form</h2>
+
+    <form>
+        <label>Student Name</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <label>Email Address</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <label>Mobile Number</label>
+        <input type="tel" placeholder="Enter mobile number">
+
+        <label>Date of Birth</label>
+        <input type="date">
+
+        <label>Gender</label>
+        <select>
+            <option>Select Gender</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+        </select>
+
+        <label>Select Course</label>
+        <select>
+            <option>Select Course</option>
+            <option>BCA</option>
+            <option>BBA</option>
+            <option>BA</option>
+            <option>B.Sc</option>
+        </select>
+
+        <label>Address</label>
+        <textarea rows="3" placeholder="Enter your address"></textarea>
+
+        <button type="submit">Submit Application</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
