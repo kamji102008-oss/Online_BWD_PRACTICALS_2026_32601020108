@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Shopping Store</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+/* Navigation */
+nav {
+    background: #222;
+    padding: 18px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 20px;
+    font-size: 17px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: orange;
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #ff9800, #ff5722);
+    color: white;
+    text-align: center;
+    padding: 35px;
+}
+
+header h1::after {
+    content: " 🛍️";
+}
+
+/* Product Section */
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 40px;
+}
+
+/* Product Card */
+.card {
+    background: white;
+    width: 280px;
+    padding: 20px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px gray;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 18px gray;
+}
+
+/* Product Image */
+.card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: 0.4s;
+}
+
+.card img:hover {
+    transform: scale(1.08);
+}
+
+.card h2 {
+    margin: 15px;
+    color: #333;
+}
+
+.card p {
+    color: #666;
+    margin: 10px;
+}
+
+.price {
+    color: green;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Button */
+button {
+    background: #ff5722;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #222;
+    transform: scale(1.1);
+}
+
+/* Animation */
+.offer {
+    text-align: center;
+    color: red;
+    padding: 15px;
+    animation: blink 1s infinite alternate;
+}
+
+@keyframes blink {
+    from {
+        opacity: 0.4;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navigation Bar -->
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+</nav>
+
+<!-- Header -->
+<header>
+    <h1>Welcome to Online Shopping Store</h1>
+    <p>Best Products at Best Prices</p>
+</header>
+
+<h2 class="offer">🎉 Special Discount Offer 🎉</h2>
+
+<!-- Product Section -->
+<div class="container">
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500"
+        alt="Watch">
+
+        <h2>Smart Watch</h2>
+        <p>Stylish and modern smart watch.</p>
+        <div class="price">₹999</div>
+        <br>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500"
+        alt="Headphones">
+
+        <h2>Headphones</h2>
+        <p>High quality wireless headphones.</p>
+        <div class="price">₹799</div>
+        <br>
+        <button>Buy Now</button>
+    </div>
+
+    <div class="card">
+        <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
+        alt="Shoes">
+
+        <h2>Sports Shoes</h2>
+        <p>Comfortable and stylish sports shoes.</p>
+        <div class="price">₹1199</div>
+        <br>
+        <button>Buy Now</button>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 Online Shopping Store | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>
