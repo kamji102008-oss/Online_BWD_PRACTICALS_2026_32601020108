@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Grade Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .box {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: 10px;
+            margin: 8px;
+            width: 80%;
+        }
+
+        button {
+            background: green;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <h2>Student Grade Calculator</h2>
+
+    <input type="number" id="s1" placeholder="Enter English Marks">
+    <input type="number" id="s2" placeholder="Enter Maths Marks">
+    <input type="number" id="s3" placeholder="Enter Computer Marks">
+    <input type="number" id="s4" placeholder="Enter Science Marks">
+    <input type="number" id="s5" placeholder="Enter Hindi Marks">
+
+    <br><br>
+
+    <button onclick="calculate()">Calculate Result</button>
+
+    <h3 id="result"></h3>
+
+</div>
+
+<script>
+
+function calculate() {
+
+    var a = Number(document.getElementById("s1").value);
+    var b = Number(document.getElementById("s2").value);
+    var c = Number(document.getElementById("s3").value);
+    var d = Number(document.getElementById("s4").value);
+    var e = Number(document.getElementById("s5").value);
+
+    if ([a,b,c,d,e].some(m => m < 0 || m > 100) ||
+        [a,b,c,d,e].some(m => document.getElementById("s1").value === "")) {
+        document.getElementById("result").innerHTML =
+        "Please enter valid marks.";
+        return;
+    }
+
+    var total = a + b + c + d + e;
+    var percentage = total / 5;
+    var grade;
+
+    if (a < 33 || b < 33 || c < 33 || d < 33 || e < 33) {
+        grade = "Fail";
+    }
+    else if (percentage >= 90) {
+        grade = "A+";
+    }
+    else if (percentage >= 80) {
+        grade = "A";
+    }
+    else if (percentage >= 70) {
+        grade = "B";
+    }
+    else if (percentage >= 60) {
+        grade = "C";
+    }
+    else if (percentage >= 40) {
+        grade = "D";
+    }
+    else {
+        grade = "Fail";
+    }
+
+    document.getElementById("result").innerHTML =
+    "Total Marks: " + total + "/500<br>" +
+    "Percentage: " + percentage + "%<br>" +
+    "Grade: " + grade;
+}
+
+</script>
+
+</body>
+</html>
