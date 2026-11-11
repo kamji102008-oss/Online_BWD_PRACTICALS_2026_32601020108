@@ -1,0 +1,58 @@
+<!DOCTYPE html><html>
+<head>
+    <title>Student Eligibility Checker</title><style>
+    body {
+        font-family: Arial;
+        background-color: lightblue;
+        text-align: center;
+        padding: 50px;
+    }
+
+    .box {
+        background-color: white;
+        padding: 25px;
+        width: 350px;
+        margin: auto;
+        border-radius: 10px;
+    }
+
+    input {
+        padding: 10px;
+        margin: 10px;
+        width: 80%;
+    }
+
+    button {
+        background-color: green;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        cursor: pointer;
+    }
+</style>
+
+</head><body><div class="box">
+    <h2>Student Eligibility Checker</h2><input type="number" id="age" placeholder="Enter Age"><br>
+
+<input type="number" id="attendance" placeholder="Enter Attendance %"><br>
+
+<input type="number" id="marks" placeholder="Enter Marks"><br>
+
+<button onclick="checkEligibility()">Check Eligibility</button>
+
+</div><script>
+    function checkEligibility() {
+
+        var age = Number(document.getElementById("age").value);
+        var attendance = Number(document.getElementById("attendance").value);
+        var marks = Number(document.getElementById("marks").value);
+
+        if (age >= 17 && attendance >= 75 && marks >= 40) {
+            alert("Congratulations! Student is Eligible.");
+        }
+        else {
+            alert("Sorry! Student is Not Eligible.");
+        }
+    }
+</script></body>
+</html>
