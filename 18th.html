@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Subject Information</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            background: white;
+            padding: 25px;
+            width: 350px;
+            margin: auto;
+            border-radius: 10px;
+        }
+
+        select {
+            padding: 10px;
+            width: 200px;
+        }
+
+        #result {
+            margin-top: 20px;
+            color: darkblue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Student Subject List</h2>
+
+        <label>Select a Subject:</label><br><br>
+
+        <select id="subject" onchange="showSubject()">
+            <option value="">--Select Subject--</option>
+            <option value="0">HTML</option>
+            <option value="1">CSS</option>
+            <option value="2">JavaScript</option>
+            <option value="3">C Language</option>
+            <option value="4">Mathematics</option>
+        </select>
+
+        <div id="result">
+            <p>Select a subject to see details.</p>
+        </div>
+    </div>
+
+    <script>
+        // Array of subjects
+        let subjects = [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "C Language",
+            "Mathematics"
+        ];
+
+        let details = [
+            "HTML is used to create webpages.",
+            "CSS is used to style webpages.",
+            "JavaScript makes webpages interactive.",
+            "C Language is a programming language.",
+            "Mathematics is used for calculations."
+        ];
+
+        // Function to display subject information
+        function showSubject() {
+            let index = document.getElementById("subject").value;
+
+            if (index === "") {
+                document.getElementById("result").innerHTML =
+                    "Select a subject to see details.";
+            } else {
+                document.getElementById("result").innerHTML =
+                    "<h3>" + subjects[index] + "</h3>" +
+                    "<p>" + details[index] + "</p>";
+            }
+        }
+    </script>
+
+</body>
+</html>
