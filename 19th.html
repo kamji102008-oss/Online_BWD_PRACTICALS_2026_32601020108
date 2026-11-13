@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Student Registration Form</title>
+
+<style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(120deg, #667eea, #764ba2);
+    margin: 0;
+    padding: 30px 15px;
+}
+
+.container {
+    max-width: 500px;
+    background: white;
+    padding: 30px;
+    margin: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #563d91;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 7px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 22px;
+    background: #563d91;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #38266b;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Registration</h2>
+
+<form id="registrationForm">
+
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your name">
+
+<label>Email Address</label>
+<input type="email" id="email" placeholder="Enter your email">
+
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter password">
+
+<label>Gender</label>
+<select id="gender">
+<option value="">Select Gender</option>
+<option>Male</option>
+<option>Female</option>
+<option>Other</option>
+</select>
+
+<label>Phone Number</label>
+<input type="tel" id="phone" placeholder="Enter 10 digit number">
+
+<label>Course</label>
+<select id="course">
+<option value="">Select Course</option>
+<option>BCA</option>
+<option>BBA</option>
+<option>B.Tech</option>
+<option>MCA</option>
+</select>
+
+<button type="submit">Register Now</button>
+
+</form>
+
+<p id="message"></p>
+
+</div>
+
+<script>
+
+document.getElementById("registrationForm")
+.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let password = document.getElementById("password").value;
+    let gender = document.getElementById("gender").value;
+    let phone = document.getElementById("phone").value.trim();
+    let course = document.getElementById("course").value;
+
+    let message = document.getElementById("message");
+
+    if (name.length < 3) {
+        message.style.color = "red";
+        message.innerHTML = "Please enter a valid name!";
+    }
+
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        message.style.color = "red";
+        message.innerHTML = "Please enter a valid email!";
+    }
+
+    else if (password.length < 6) {
+        message.style.color = "red";
+        message.innerHTML = "Password must be at least 6 characters!";
+    }
+
+    else if (gender === "") {
+        message.style.color = "red";
+        message.innerHTML = "Please select your gender!";
+    }
+
+    else if (!/^[0-9]{10}$/.test(phone)) {
+        message.style.color = "red";
+        message.innerHTML = "Enter a valid 10 digit phone number!";
+    }
+
+    else if (course === "") {
+        message.style.color = "red";
+        message.innerHTML = "Please select your course!";
+    }
+
+    else {
+        message.style.color = "green";
+        message.innerHTML = "Registration Successful!";
+        document.getElementById("registrationForm").reset();
+    }
+
+});
+
+</script>
+
+</body>
+</html>
